@@ -8,8 +8,14 @@ group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
-repositories {
-	mavenCentral()
+
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE")
+	}
 }
 
 dependencies {
