@@ -1,7 +1,13 @@
 buildscript {
-	repositories {
-		mavenCentral()
-	}
+repositories {
+	  maven {
+	    credentials {
+            username "$nexusUsername"
+            password "$nexusPassword"
+        }
+    url "${nexusUrl}/maven-public"
+  }
+}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE")
 	}
@@ -11,7 +17,7 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
-
+apply plugin: 'maven'
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
@@ -25,7 +31,13 @@ bootJar {
 }
 
 repositories {
-	mavenCentral()
+	  maven {
+	  	    credentials {
+            username "$nexusUsername"
+            password "$nexusPassword"
+        }
+    url "${nexusUrl}/maven-public"
+  }
 }
 
 sourceCompatibility = 1.8
