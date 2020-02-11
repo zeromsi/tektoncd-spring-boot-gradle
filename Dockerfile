@@ -22,8 +22,7 @@ RUN export NEXUS_SNAPSHOTS_URL
 
 
 WORKDIR /home/gradle/src
-ADD script_to_set_args_buildfile.sh .
-ADD build.gradle .
+RUN ls
 RUN /script_to_set_args_buildfile.sh
 
 RUN gradle build --no-daemon 
