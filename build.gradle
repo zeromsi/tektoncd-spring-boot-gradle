@@ -1,13 +1,4 @@
 buildscript {
-repositories {
-	  maven {
-	    credentials {
-            username "$NEXUS_USER"
-            password "$NEXUS_PASSWORD"
-        }
-    url "${NEXUS_PUBLIC_URL}"
-  }
-}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE")
 	}
@@ -33,15 +24,6 @@ bootJar {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-repositories {
-	  maven {
-	  	    credentials {
-            username "$NEXUS_USER"
-            password "$NEXUS_PASSWORD"
-        }
-    url "${NEXUS_PUBLIC_URL}"
-  }
-}
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-cache')
 	implementation('org.springframework.boot:spring-boot-starter-data-mongodb')
