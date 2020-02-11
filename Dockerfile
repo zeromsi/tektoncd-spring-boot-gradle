@@ -31,6 +31,7 @@ RUN ls
 
 ADD script_to_set_args_buildfile.sh .
 
+RUN ./script_to_set_args_buildfile.sh
 
 RUN gradle build --no-daemon 
 
