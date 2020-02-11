@@ -1,11 +1,11 @@
 #!/bin/bash
-sed -i 's=mavenCentral()= "'"\n"'"
-	  maven { "'"\n"'"
-	    credentials { "'"\n"'"
-            username "'"$NEXUS_USER"'" "'"\n"'"
-            password "'"$NEXUS_PASSWORD"'" "'"\n"'"
-        } "'"\n"'"
-    url "'"$NEXUS_PUBLIC_URL"'" "'"\n"'"
+sed -i 's=mavenCentral()= \
+	  maven { \
+	    credentials { \
+            username "'"$NEXUS_USER"'" \
+            password "'"$NEXUS_PASSWORD"'" \
+        } \
+    url "'"$NEXUS_PUBLIC_URL"'" \
   }=g' build.gradle
 
 
