@@ -2,10 +2,10 @@ buildscript {
 repositories {
 	  maven {
 	    credentials {
-            username "$nexusUsername"
-            password "$nexusPassword"
+            username "$NEXUS_USER"
+            password "$NEXUS_PASSWORD"
         }
-    url "${nexusUrl}/maven-public"
+    url "${NEXUS_PUBLIC_URL}"
   }
 }
 	dependencies {
@@ -30,19 +30,18 @@ bootJar {
 	version =  '0.0.1-SNAPSHOT'
 }
 
-repositories {
-	  maven {
-	  	    credentials {
-            username "$nexusUsername"
-            password "$nexusPassword"
-        }
-    url "${nexusUrl}/maven-public"
-  }
-}
-
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+repositories {
+	  maven {
+	  	    credentials {
+            username "$NEXUS_USER"
+            password "$NEXUS_PASSWORD"
+        }
+    url "${NEXUS_PUBLIC_URL}"
+  }
+}
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-cache')
 	implementation('org.springframework.boot:spring-boot-starter-data-mongodb')
