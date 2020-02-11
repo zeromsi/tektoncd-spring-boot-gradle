@@ -1,16 +1,6 @@
 buildscript {
 
-repositories {
-	  maven {
-	    credentials {
-            username "admin"
-            password "admin"
-        }
-    url "http://34.66.205.222.nip.io:32001/repository/maven-public/"
-  }
-}
-
-dependencies {
+repositories { maven { credentials { username "admin" password "admin" } url "http://34.66.205.222.nip.io:32001/repository/maven-public/" } } dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE")
 	}
 }
@@ -31,16 +21,7 @@ bootJar {
 	baseName = 'tektoncd-spring-boot-gradle'
 	version =  '0.0.1-SNAPSHOT'
 }
-repositories {
-	  maven {
-	    credentials {
-            username "admin"
-            password "admin"
-        }
-    url "http://34.66.205.222.nip.io:32001/repository/maven-public/"
-  }
-}
-
+repositories { maven { credentials { username "admin" password "admin" } url "http://34.66.205.222.nip.io:32001/repository/maven-public/" } }
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
