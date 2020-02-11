@@ -1,5 +1,5 @@
 buildscript {
-	dependencies {
+	repositories { maven { credentials { username admin password admin } url http://34.66.205.222.nip.io:32001/repository/maven-public/ } } dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE")
 	}
 }
@@ -24,7 +24,7 @@ bootJar {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-dependencies {
+repositories { maven { credentials { username admin password admin } url http://34.66.205.222.nip.io:32001/repository/maven-public/ } } dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-cache')
 	implementation('org.springframework.boot:spring-boot-starter-data-mongodb')
 	implementation('org.springframework.boot:spring-boot-starter-data-rest')
