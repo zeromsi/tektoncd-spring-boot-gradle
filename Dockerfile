@@ -20,10 +20,12 @@ RUN export NEXUS_PUBLIC_URL
 RUN export NEXUS_RELEASES_URL
 RUN export NEXUS_SNAPSHOTS_URL
 
+ADD script_to_set_args_buildfile.sh .
+RUN /script_to_set_args_buildfile.sh
+
 
 WORKDIR /home/gradle/src
 RUN echo "PWD is: $PWD"
-RUN ~/home/gradle/src/script_to_set_args_buildfile.sh
 
 RUN gradle build --no-daemon 
 
