@@ -5,10 +5,8 @@ sed -i 's=mavenCentral()= \
             username "'"$NEXUS_USER"'" \
             password "'"$NEXUS_PASSWORD"'" \
         } \
-    url "'"$NEXUS_PUBLIC_URL"'" \
+    url "'"$NEXUS_MAVEN_PUBLIC_URL"'" \
   }=g' build.gradle
 
-
-cat build.gradle
 
 
