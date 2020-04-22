@@ -17,9 +17,11 @@ WORKDIR /home/gradle/src
 
 ADD script_to_set_args_buildfile.sh .
 
-RUN ./script_to_set_args_buildfile.sh
+RUN status=$(curl -Is --write-out %{http_code}  --silent --output /dev/null $NEXUS_MAVEN_PUBLIC_URL --connect-timeout 1 | head -1) \
+&& echo "$status" \
+&& if [ $status = "401" ] ; then sh ./script_to_set_args_buildfile.sh ; else echo $status; fi 
 
-RUN gradle build --no-daemon 
+RUN gradle build --no-daemon -x test
 
 FROM openjdk:8-jre-slim
 

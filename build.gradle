@@ -45,8 +45,6 @@ dependencies {
 	implementation('org.springframework.security:spring-security-config')
 	implementation('org.springframework.security:spring-security-messaging')
 	implementation('org.springframework.security:spring-security-web')
-
-
 	implementation('com.google.code.gson:gson:2.8.5')
 	compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.7.0'
 	compile 'org.eclipse.jgit:org.eclipse.jgit:4.5.0.201609210915-r'

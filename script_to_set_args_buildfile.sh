@@ -8,5 +8,5 @@ sed -i 's=mavenCentral()= \
     url "'"$NEXUS_MAVEN_PUBLIC_URL"'" \
   }=g' build.gradle
 
-
+echo "done"
 
